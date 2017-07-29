@@ -1,1 +1,5 @@
-tutorial\mvc\TestController.class
+tutorial\Engine.class
+tutorial\entities\BlogEntry.class
+tutorial\mvc\BlogEntryController.class
+tutorial\Calculator.class
+tutorial\Car.class

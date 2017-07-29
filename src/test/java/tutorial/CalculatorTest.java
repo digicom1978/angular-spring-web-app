@@ -21,7 +21,7 @@ public class CalculatorTest {
 
 	@Test
 	public void testAbs() {
-		when(calc.abs(-20)).thenReturn(-20);
+		when(calc.abs(-20)).thenReturn(20);
 		assertEquals(20, calc.abs(-20));
 	}
 }
