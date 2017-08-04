@@ -13,10 +13,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import tutorial.core.entities.BlogEntry;
+import tutorial.core.models.entities.BlogEntry;
 import tutorial.core.services.BlogEntryService;
-import tutorial.rest.resource.BlogEntryResource;
-import tutorial.rest.resource.asm.BlogEntryResourceAsm;
+import tutorial.rest.resources.BlogEntryResource;
+import tutorial.rest.resources.asm.BlogEntryResourceAsm;
 
 @Controller
 public class BlogEntryController {
@@ -29,7 +29,7 @@ public class BlogEntryController {
 	@RequestMapping(value="/rest/blog-entries/{blogEntryId}", 
 			method = RequestMethod.GET)
 	public ResponseEntity<BlogEntryResource> getBlogEntry(@PathVariable Long blogEntryId) {
-		BlogEntry entry = service.find(blogEntryId);
+		BlogEntry entry = service.findBlogEntry(blogEntryId);
 		if( entry != null ) {
 			BlogEntryResource res = new BlogEntryResourceAsm().toResource(entry);	
 			return new ResponseEntity<BlogEntryResource>(res, HttpStatus.OK);
@@ -41,7 +41,7 @@ public class BlogEntryController {
 	@RequestMapping(value="/rest/blog-entries/{blogEntryId}", 
 			method = RequestMethod.DELETE)
 	public ResponseEntity<BlogEntryResource> deleteBlogEntry(@PathVariable Long blogEntryId) {
-		BlogEntry entry = service.delete(blogEntryId);
+		BlogEntry entry = service.deleteBlogEntry(blogEntryId);
 		if( entry != null ) {
 			BlogEntryResource res = new BlogEntryResourceAsm().toResource(entry);	
 			return new ResponseEntity<BlogEntryResource>(res, HttpStatus.OK);
@@ -54,7 +54,7 @@ public class BlogEntryController {
 			method = RequestMethod.PUT)
 	public ResponseEntity<BlogEntryResource> updateBlogEntry(@PathVariable Long blogEntryId, 
 															@RequestBody BlogEntryResource sentBlogEntry) {
-		BlogEntry updateEntry = service.update(blogEntryId, sentBlogEntry.toBlogEntry());
+		BlogEntry updateEntry = service.updateBlogEntry(blogEntryId, sentBlogEntry.toBlogEntry());
 		if( updateEntry != null ) {
 			BlogEntryResource res = new BlogEntryResourceAsm().toResource(updateEntry);	
 			return new ResponseEntity<BlogEntryResource>(res, HttpStatus.OK);
