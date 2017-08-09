@@ -1,0 +1,3 @@
+0:0:0:0:0:0:0:1 - - [27/Jul/2017:22:35:46 -0400] "GET /basic-web-app/test HTTP/1.1" 200 13 http-bio-8080-exec-1 2168
+0:0:0:0:0:0:0:1 - - [27/Jul/2017:23:45:13 -0400] "GET /basic-web-app/test HTTP/1.1" 200 13 http-bio-8080-exec-1 1891
+0:0:0:0:0:0:0:1 - - [27/Jul/2017:23:45:13 -0400] "GET /favicon.ico HTTP/1.1" 404 - http-bio-8080-exec-2 0

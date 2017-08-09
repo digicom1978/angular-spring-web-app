@@ -3,21 +3,31 @@ tutorial\Car.class
 tutorial\rest\resources\asm\BlogEntryListResourceAsm.class
 tutorial\rest\resources\asm\BlogListResourceAsm.class
 tutorial\core\models\entities\Blog.class
+<<<<<<< HEAD
 tutorial\core\repositories\jpa\JpaAccountRepo.class
 tutorial\Engine.class
 tutorial\mvc\BlogEntryController.class
 tutorial\rest\resource\BlogEntryResource.class
+=======
+tutorial\Engine.class
+>>>>>>> bd2e2fbae02f7a71aac053fb555f71fefd58cd72
 tutorial\rest\mvc\BlogController.class
 tutorial\core\services\exceptions\AccountDoesNotExistException.class
 tutorial\rest\resources\BlogListResource.class
 tutorial\core\services\exceptions\BlogNotFoundException.class
+<<<<<<< HEAD
 tutorial\mvc\TestController.class
+=======
+>>>>>>> bd2e2fbae02f7a71aac053fb555f71fefd58cd72
 tutorial\core\services\AccountService.class
 tutorial\rest\resources\BlogEntryResource.class
 tutorial\rest\mvc\AccountController.class
 tutorial\rest\resources\asm\AccountResourceAsm.class
 tutorial\core\services\BlogService.class
+<<<<<<< HEAD
 tutorial\entities\BlogEntry.class
+=======
+>>>>>>> bd2e2fbae02f7a71aac053fb555f71fefd58cd72
 tutorial\Calculator.class
 tutorial\rest\resources\BlogEntryListResource.class
 tutorial\core\services\exceptions\BlogExistsException.class
@@ -33,6 +43,9 @@ tutorial\core\services\util\BlogEntryList.class
 tutorial\rest\resources\BlogResource.class
 tutorial\core\models\entities\BlogEntry.class
 tutorial\core\services\util\BlogList.class
+<<<<<<< HEAD
 tutorial\rest\resource\asm\BlogEntryResourceAsm.class
 tutorial\core\repositories\AccountRepo.class
+=======
+>>>>>>> bd2e2fbae02f7a71aac053fb555f71fefd58cd72
 tutorial\rest\exceptions\BadRequestException.class

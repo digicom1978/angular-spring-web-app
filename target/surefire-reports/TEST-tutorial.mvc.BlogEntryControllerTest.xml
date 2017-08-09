@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
+<<<<<<< HEAD
 <testsuite tests="7" failures="0" name="tutorial.mvc.BlogEntryControllerTest" time="0.316" errors="0" skipped="0">
+=======
+<testsuite tests="7" failures="0" name="tutorial.mvc.BlogEntryControllerTest" time="0.301" errors="0" skipped="0">
+>>>>>>> bd2e2fbae02f7a71aac053fb555f71fefd58cd72
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_144\jre\bin"/>
@@ -27,7 +31,11 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="user.variant" value=""/>
     <property name="os.name" value="Windows 7"/>
+<<<<<<< HEAD
     <property name="classworlds.conf" value="C:\workspace_jee_oxy\.metadata\.plugins\org.eclipse.m2e.launching\launches\m2conf7039920200847967150.tmp"/>
+=======
+    <property name="classworlds.conf" value="C:\workspace_jee_oxy\.metadata\.plugins\org.eclipse.m2e.launching\launches\m2conf8388189463557173376.tmp"/>
+>>>>>>> bd2e2fbae02f7a71aac053fb555f71fefd58cd72
     <property name="sun.jnu.encoding" value="MS949"/>
     <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_144\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:/Program Files/Java/jre1.8.0_144/bin/server;C:/Program Files/Java/jre1.8.0_144/bin;C:/Program Files/Java/jre1.8.0_144/lib/amd64;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x86;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x64;C:\Program Files\ThinkPad\Bluetooth Software\;C:\Program Files\ThinkPad\Bluetooth Software\syswow64;C:\Program Files (x86)\Common Files\lenovo\easyplussdk\bin;C:\Program Files (x86)\Lenovo\Access Connections\;C:\Program Files (x86)\Intel\Services\IPT\;C:\IDE\chromedriver_win32;C:\Program Files\Java\jdk1.8.0_144\bin;C:\apache-maven-3.5.0\bin;C:\Program Files\Git\cmd;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\IDE\chromedriver_win32;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x86;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x64;C:\Program Files\ThinkPad\Bluetooth Software\;C:\Program Files\ThinkPad\Bluetooth Software\syswow64;C:\Program Files (x86)\Common Files\lenovo\easyplussdk\bin;C:\Program Files (x86)\Lenovo\Access Connections\;C:\Program Files (x86)\Intel\Services\IPT\;C:\IDE\chromedriver_win32;C:\Program Files\Java\jdk1.8.0_144\bin;C:\apache-maven-3.5.0\bin;C:\Program Files\Git\cmd;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\IDE\chromedriver_win32;;C:\IDE\eclipse-jee-oxygen-R-win32-x86_64;;."/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
@@ -61,6 +69,7 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
+<<<<<<< HEAD
   <testcase classname="tutorial.mvc.BlogEntryControllerTest" name="deleteNonExistingBlogEntry" time="0.001"/>
   <testcase classname="tutorial.mvc.BlogEntryControllerTest" name="getNonExistingBlogEntry" time="0.037"/>
   <testcase classname="tutorial.mvc.BlogEntryControllerTest" name="test" time="0.068"/>
@@ -68,4 +77,13 @@
   <testcase classname="tutorial.mvc.BlogEntryControllerTest" name="updateNonExistingBlogEntry" time="0.154"/>
   <testcase classname="tutorial.mvc.BlogEntryControllerTest" name="getExistingBlogEntry" time="0"/>
   <testcase classname="tutorial.mvc.BlogEntryControllerTest" name="deleteExistingBlogEntry" time="0.001"/>
+=======
+  <testcase classname="tutorial.mvc.BlogEntryControllerTest" name="deleteNonExistingBlogEntry" time="0.041"/>
+  <testcase classname="tutorial.mvc.BlogEntryControllerTest" name="getNonExistingBlogEntry" time="0.036"/>
+  <testcase classname="tutorial.mvc.BlogEntryControllerTest" name="test" time="0.103"/>
+  <testcase classname="tutorial.mvc.BlogEntryControllerTest" name="updateExistingBlogEntry" time="0.029"/>
+  <testcase classname="tutorial.mvc.BlogEntryControllerTest" name="updateNonExistingBlogEntry" time="0.031"/>
+  <testcase classname="tutorial.mvc.BlogEntryControllerTest" name="getExistingBlogEntry" time="0.03"/>
+  <testcase classname="tutorial.mvc.BlogEntryControllerTest" name="deleteExistingBlogEntry" time="0.031"/>
+>>>>>>> bd2e2fbae02f7a71aac053fb555f71fefd58cd72
 </testsuite>

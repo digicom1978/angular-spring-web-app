@@ -7,8 +7,11 @@ C:\workspace_jee_oxy\basic-web-app\src\main\java\tutorial\core\models\entities\B
 C:\workspace_jee_oxy\basic-web-app\src\main\java\tutorial\core\services\util\BlogList.java
 C:\workspace_jee_oxy\basic-web-app\src\main\java\tutorial\rest\resources\asm\BlogEntryListResourceAsm.java
 C:\workspace_jee_oxy\basic-web-app\src\main\java\tutorial\rest\resources\asm\BlogEntryResourceAsm.java
+<<<<<<< HEAD
 C:\workspace_jee_oxy\basic-web-app\src\main\java\tutorial\mvc\TestController.java
 C:\workspace_jee_oxy\basic-web-app\src\main\java\tutorial\rest\resource\BlogEntryResource.java
+=======
+>>>>>>> bd2e2fbae02f7a71aac053fb555f71fefd58cd72
 C:\workspace_jee_oxy\basic-web-app\src\main\java\tutorial\core\services\BlogService.java
 C:\workspace_jee_oxy\basic-web-app\src\main\java\tutorial\rest\exceptions\BadRequestException.java
 C:\workspace_jee_oxy\basic-web-app\src\main\java\tutorial\rest\resources\AccountResource.java
@@ -22,11 +25,15 @@ C:\workspace_jee_oxy\basic-web-app\src\main\java\tutorial\rest\resources\BlogRes
 C:\workspace_jee_oxy\basic-web-app\src\main\java\tutorial\rest\mvc\AccountController.java
 C:\workspace_jee_oxy\basic-web-app\src\main\java\tutorial\rest\resources\asm\AccountResourceAsm.java
 C:\workspace_jee_oxy\basic-web-app\src\main\java\tutorial\rest\resources\BlogEntryListResource.java
+<<<<<<< HEAD
 C:\workspace_jee_oxy\basic-web-app\src\main\java\tutorial\core\repositories\jpa\JpaAccountRepo.java
+=======
+>>>>>>> bd2e2fbae02f7a71aac053fb555f71fefd58cd72
 C:\workspace_jee_oxy\basic-web-app\src\main\java\tutorial\core\services\util\BlogEntryList.java
 C:\workspace_jee_oxy\basic-web-app\src\main\java\tutorial\rest\resources\asm\BlogResourceAsm.java
 C:\workspace_jee_oxy\basic-web-app\src\main\java\tutorial\core\services\exceptions\AccountDoesNotExistException.java
 C:\workspace_jee_oxy\basic-web-app\src\main\java\tutorial\core\models\entities\Blog.java
+<<<<<<< HEAD
 C:\workspace_jee_oxy\basic-web-app\src\main\java\tutorial\mvc\BlogEntryController.java
 C:\workspace_jee_oxy\basic-web-app\src\main\java\tutorial\core\services\exceptions\BlogNotFoundException.java
 C:\workspace_jee_oxy\basic-web-app\src\main\java\tutorial\Engine.java
@@ -36,3 +43,10 @@ C:\workspace_jee_oxy\basic-web-app\src\main\java\tutorial\entities\BlogEntry.jav
 C:\workspace_jee_oxy\basic-web-app\src\main\java\tutorial\Car.java
 C:\workspace_jee_oxy\basic-web-app\src\main\java\tutorial\rest\mvc\BlogEntryController.java
 C:\workspace_jee_oxy\basic-web-app\src\main\java\tutorial\rest\resource\asm\BlogEntryResourceAsm.java
+=======
+C:\workspace_jee_oxy\basic-web-app\src\main\java\tutorial\core\services\exceptions\BlogNotFoundException.java
+C:\workspace_jee_oxy\basic-web-app\src\main\java\tutorial\Engine.java
+C:\workspace_jee_oxy\basic-web-app\src\main\java\tutorial\core\services\AccountService.java
+C:\workspace_jee_oxy\basic-web-app\src\main\java\tutorial\Car.java
+C:\workspace_jee_oxy\basic-web-app\src\main\java\tutorial\rest\mvc\BlogEntryController.java
+>>>>>>> bd2e2fbae02f7a71aac053fb555f71fefd58cd72
