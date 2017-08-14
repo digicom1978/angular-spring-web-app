@@ -1,51 +1,45 @@
+tutorial\core\repositories\BlogEntryRepo.class
+tutorial\rest\resources\AccountListResource.class
 tutorial\core\models\entities\Account.class
+tutorial\core\services\impl\BlogEntryServiceImpl.class
+tutorial\core\repositories\jpa\JpaBlogRepo.class
+tutorial\rest\resources\asm\AccountListResourceAsm.class
 tutorial\Car.class
 tutorial\rest\resources\asm\BlogEntryListResourceAsm.class
+tutorial\core\services\impl\AccountServiceImpl.class
 tutorial\rest\resources\asm\BlogListResourceAsm.class
 tutorial\core\models\entities\Blog.class
-<<<<<<< HEAD
 tutorial\core\repositories\jpa\JpaAccountRepo.class
 tutorial\Engine.class
-tutorial\mvc\BlogEntryController.class
 tutorial\rest\resource\BlogEntryResource.class
-=======
-tutorial\Engine.class
->>>>>>> bd2e2fbae02f7a71aac053fb555f71fefd58cd72
 tutorial\rest\mvc\BlogController.class
 tutorial\core\services\exceptions\AccountDoesNotExistException.class
 tutorial\rest\resources\BlogListResource.class
 tutorial\core\services\exceptions\BlogNotFoundException.class
-<<<<<<< HEAD
-tutorial\mvc\TestController.class
-=======
->>>>>>> bd2e2fbae02f7a71aac053fb555f71fefd58cd72
+tutorial\core\services\impl\BlogServiceImpl.class
 tutorial\core\services\AccountService.class
 tutorial\rest\resources\BlogEntryResource.class
 tutorial\rest\mvc\AccountController.class
 tutorial\rest\resources\asm\AccountResourceAsm.class
 tutorial\core\services\BlogService.class
-<<<<<<< HEAD
-tutorial\entities\BlogEntry.class
-=======
->>>>>>> bd2e2fbae02f7a71aac053fb555f71fefd58cd72
 tutorial\Calculator.class
 tutorial\rest\resources\BlogEntryListResource.class
 tutorial\core\services\exceptions\BlogExistsException.class
 tutorial\core\services\BlogEntryService.class
 tutorial\rest\exceptions\NotFoundException.class
 tutorial\rest\resources\asm\BlogEntryResourceAsm.class
+tutorial\core\services\util\AccountList.class
 tutorial\rest\exceptions\ConflictException.class
+tutorial\core\repositories\BlogRepo.class
 tutorial\rest\resources\AccountResource.class
 tutorial\core\services\exceptions\AccountExistsException.class
 tutorial\rest\mvc\BlogEntryController.class
 tutorial\rest\resources\asm\BlogResourceAsm.class
 tutorial\core\services\util\BlogEntryList.class
 tutorial\rest\resources\BlogResource.class
+tutorial\core\repositories\jpa\JpaBlogEntryRepo.class
 tutorial\core\models\entities\BlogEntry.class
 tutorial\core\services\util\BlogList.class
-<<<<<<< HEAD
 tutorial\rest\resource\asm\BlogEntryResourceAsm.class
 tutorial\core\repositories\AccountRepo.class
-=======
->>>>>>> bd2e2fbae02f7a71aac053fb555f71fefd58cd72
 tutorial\rest\exceptions\BadRequestException.class

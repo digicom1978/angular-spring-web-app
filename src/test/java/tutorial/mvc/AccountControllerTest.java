@@ -1,23 +1,10 @@
 package tutorial.mvc;
 
-import org.junit.Before;
-import org.junit.Test;
-import org.mockito.ArgumentCaptor;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
-import org.springframework.http.MediaType;
-import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.setup.MockMvcBuilders;
-import tutorial.core.models.entities.Account;
-import tutorial.core.models.entities.Blog;
-import tutorial.core.services.AccountService;
-import tutorial.core.services.exceptions.AccountDoesNotExistException;
-import tutorial.core.services.exceptions.AccountExistsException;
-import tutorial.core.services.exceptions.BlogExistsException;
-import tutorial.rest.mvc.AccountController;
-
-import static org.hamcrest.Matchers.*;
+import static org.hamcrest.Matchers.endsWith;
+import static org.hamcrest.Matchers.everyItem;
+import static org.hamcrest.Matchers.hasItem;
+import static org.hamcrest.Matchers.hasItems;
+import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Matchers.any;
 import static org.mockito.Matchers.eq;
@@ -29,6 +16,28 @@ import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.header;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.junit.Before;
+import org.junit.Test;
+import org.mockito.ArgumentCaptor;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
+import org.springframework.http.MediaType;
+import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.setup.MockMvcBuilders;
+
+import tutorial.core.models.entities.Account;
+import tutorial.core.models.entities.Blog;
+import tutorial.core.services.AccountService;
+import tutorial.core.services.exceptions.AccountDoesNotExistException;
+import tutorial.core.services.exceptions.AccountExistsException;
+import tutorial.core.services.exceptions.BlogExistsException;
+import tutorial.core.services.util.AccountList;
+import tutorial.rest.mvc.AccountController;
 
 
 public class AccountControllerTest {
@@ -101,9 +110,9 @@ public class AccountControllerTest {
 		mockMvc.perform(post("/rest/accounts")
 				.content("{\"name\":\"test\",\"password\":\"test\"}")
 				.contentType(MediaType.APPLICATION_JSON))
-			.andExpect(header().string("Location", org.hamcrest.Matchers.endsWith("/rest/accounts/1")))
-			.andExpect(jsonPath("$.name", is(createdAccount.getName())))
-			.andExpect(status().isCreated());
+		.andExpect(header().string("Location", org.hamcrest.Matchers.endsWith("/rest/accounts/1")))
+		.andExpect(jsonPath("$.name", is(createdAccount.getName())))
+		.andExpect(status().isCreated());
 
 		verify(service).createAccount(accountCaptor.capture());
 
@@ -123,7 +132,7 @@ public class AccountControllerTest {
 		mockMvc.perform(post("/rest/accounts")
 				.content("{\"name\":\"test\",\"password\":\"test\"}")
 				.contentType(MediaType.APPLICATION_JSON))
-			.andExpect(status().isConflict());
+		.andExpect(status().isConflict());
 	}
 
 	@Test
@@ -136,12 +145,14 @@ public class AccountControllerTest {
 		when(service.findAccount(1L)).thenReturn(foundAccount);
 
 		mockMvc.perform(get("/rest/accounts/1"))
-			.andDo(print())
-//			.andExpect(jsonPath("$.password", is(nullValue())))
-			.andExpect(jsonPath("$.password").doesNotExist())
-			.andExpect(jsonPath("$.name", is(foundAccount.getName())))
-			.andExpect(status().isOk());
-		
+		.andDo(print())
+		//			.andExpect(jsonPath("$.password", is(nullValue())))
+		.andExpect(jsonPath("$.password").doesNotExist())
+		.andExpect(jsonPath("$.name", is(foundAccount.getName())))
+		.andExpect(jsonPath("$.links[*].rel",
+				hasItems(endsWith("self"), endsWith("blogs"))))
+		.andExpect(status().isOk());
+
 	}
 
 	@Test
@@ -149,6 +160,60 @@ public class AccountControllerTest {
 		when(service.findAccount(1L)).thenReturn(null);
 
 		mockMvc.perform(get("/rest/accounts/1"))
-			.andExpect(status().isNotFound());
+		.andExpect(status().isNotFound());
+	}
+
+	@Test
+	public void findAllAccounts() throws Exception {
+		List<Account> accounts = new ArrayList<Account>();
+
+		Account accountA = new Account();
+		accountA.setId(1L);
+		accountA.setPassword("accountA");
+		accountA.setName("accountA");
+		accounts.add(accountA);
+
+		Account accountB = new Account();
+		accountB.setId(1L);
+		accountB.setPassword("accountB");
+		accountB.setName("accountB");
+		accounts.add(accountB);
+
+		AccountList accountList = new AccountList(accounts);
+
+		when(service.findAllAccounts()).thenReturn(accountList);
+
+		mockMvc.perform(get("/rest/accounts"))
+		.andExpect(jsonPath("$.accounts[*].name",
+				hasItems(endsWith("accountA"), endsWith("accountB"))))
+		.andExpect(status().isOk());
+	}
+
+
+	@Test
+	public void findAccountsByName() throws Exception {
+		List<Account> accounts = new ArrayList<Account>();
+
+		Account accountA = new Account();
+		accountA.setId(1L);
+		accountA.setPassword("accountA");
+		accountA.setName("accountA");
+		accounts.add(accountA);
+
+		Account accountB = new Account();
+		accountB.setId(1L);
+		accountB.setPassword("accountB");
+		accountB.setName("accountB");
+		accounts.add(accountB);
+
+		AccountList accountList = new AccountList(accounts);
+
+		when(service.findAllAccounts()).thenReturn(accountList);
+
+		mockMvc.perform(get("/rest/accounts").param("name", "accountA"))
+			.andDo(print())
+			.andExpect(jsonPath("$.accounts[*].name",
+					everyItem(endsWith("accountA"))))
+			.andExpect(status().isOk());
 	}
 }

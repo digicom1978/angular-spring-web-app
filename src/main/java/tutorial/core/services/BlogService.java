@@ -1,8 +1,8 @@
 package tutorial.core.services;
 
 import tutorial.core.models.entities.Blog;
-import tutorial.core.models.entities.BlogEntry;
 import tutorial.core.services.util.BlogEntryList;
+import tutorial.core.models.entities.BlogEntry;
 import tutorial.core.services.util.BlogList;
 
 public interface BlogService {

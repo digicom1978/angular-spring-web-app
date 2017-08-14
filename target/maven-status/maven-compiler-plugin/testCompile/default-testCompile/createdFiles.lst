@@ -1,9 +1,6 @@
 tutorial\mvc\BlogControllerTest.class
 tutorial\mvc\BlogEntryControllerTest.class
 tutorial\CalculatorTest.class
-<<<<<<< HEAD
 tutorial\core\repositories\AccountRepoTest.class
-=======
->>>>>>> bd2e2fbae02f7a71aac053fb555f71fefd58cd72
 tutorial\CarTest.class
 tutorial\mvc\AccountControllerTest.class

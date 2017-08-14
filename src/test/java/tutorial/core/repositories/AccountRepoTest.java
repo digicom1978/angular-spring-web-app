@@ -34,6 +34,10 @@ public class AccountRepoTest {
 	@Test
 	@Transactional
 	public void testFind() {
-		assertNotNull(repo.findAccount(account.getId()));
+		Account account = repo.findAccount(this.account.getId());
+		assertNotNull(account);
+		assertEquals(account.getName(), "name");
+		assertEquals(account.getPassword(), "password");
+//		assertNotNull(repo.findAccount(account.getId()));
 	}
 }

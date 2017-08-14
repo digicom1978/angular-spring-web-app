@@ -1,8 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: tutorial.mvc.BlogControllerTest
 -------------------------------------------------------------------------------
-<<<<<<< HEAD
-Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.406 sec
-=======
-Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.381 sec
->>>>>>> bd2e2fbae02f7a71aac053fb555f71fefd58cd72
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.363 sec
