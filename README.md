@@ -13,3 +13,8 @@ Tutorial #5
 
 Tutorial #6
 - Once 'business-config.xml' is set, in order to run AccountRepoTest like tutorial video, need to set other parts of the xml. With the same code of Video, it will return error message about 'No qualifying bean of type [javax.persistence.EntityManagerFactory] is defined'
+
+
+Tutorial #7
+- Using postman to test Rest API.
+- It seems @Id and @GeneratedValue are shared by other entities such as account and blog
