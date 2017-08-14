@@ -16,6 +16,7 @@ public class BlogResourceAsm extends ResourceAssemblerSupport<Blog, BlogResource
 	@Override
 	public BlogResource toResource(Blog blog) {
 		BlogResource resource = new BlogResource();
+		resource.setTitle(blog.getTitle());
 		resource.add(linkTo(BlogController.class).slash(blog.getId()).withSelfRel());
 		resource.add(linkTo(BlogController.class).slash(blog.getId()).slash("blog-entries").withRel("entries"));
 		if(blog.getOwner() != null)
