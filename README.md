@@ -18,3 +18,12 @@ Tutorial #6
 Tutorial #7
 - Using postman to test Rest API.
 - It seems @Id and @GeneratedValue are shared by other entities such as account and blog
+
+
+Tutorial #8
+- http://localhost:8080/basic-web-app/app/index.html
+- Node js, grunt-cli, bower, Angular JS
+
+
+Tutorial #9
+- A tutorial covering ui-router, creation of a custom view and controller, and data-binding using $scope.
