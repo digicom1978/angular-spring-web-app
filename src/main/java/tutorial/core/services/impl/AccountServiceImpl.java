@@ -42,22 +42,19 @@ public class AccountServiceImpl implements AccountService {
 	@Override
 	public Blog createBlog(Long accountId, Blog data) {
 		Blog blogSameTitle = blogRepo.findBlogByTitle(data.getTitle());
-System.out.println("In AccountServiceImpl, accountId: "+accountId);
 		
 		if(blogSameTitle != null) {
 			throw new BlogExistsException();
 		}
 		
 		Account account = accountRepo.findAccount(accountId);
-System.out.println("In AccountServiceImpl, account.id: "+account.getId());
 		if(account == null) {
 			throw new AccountDoesNotExistException();
 		}
-System.out.println("data.id: "+data.getId());
+
 		Blog createdBlog = blogRepo.createBlog(data);
 		
 		createdBlog.setOwner(account);
-System.out.println("In AccountServiceImpl, createdBlog: "+createdBlog.getOwner().getId());
 		
 		return createdBlog;
 	}

@@ -20,15 +20,13 @@ public class JpaBlogRepo implements BlogRepo {
 	
 	@Override
 	public Blog createBlog(Blog data) {
-System.out.println("blog 1 data.id: "+data.getId());
 		em.persist(data);
-System.out.println("blog 2 data.id: "+data.getId());
 		return data;
 	}
 	
 	@Override
 	public List<Blog> findAllBlogs() {
-		Query query = em.createQuery("SELECT b FROM Blog b");
+		Query query = em.createQuery("SELECT b from Blog b");
 		return query.getResultList();
 	}
 	
@@ -39,7 +37,7 @@ System.out.println("blog 2 data.id: "+data.getId());
 	
 	@Override
 	public Blog findBlogByTitle(String title) {
-		Query query = em.createQuery("SELECT b FROM Blog b WHERE b.title=?1");
+		Query query = em.createQuery("SELECT b from Blog b where b.title=?1");
 		query.setParameter(1, title);
 		List<Blog> blogs = query.getResultList();
 		if(blogs.isEmpty()) {
@@ -51,7 +49,7 @@ System.out.println("blog 2 data.id: "+data.getId());
 	
 	@Override
 	public List<Blog> findBlogsByAccount(Long accoundId) {
-		Query query = em.createQuery("SELECT b FROM Blog b WHERE b.owner.id=?1");
+		Query query = em.createQuery("SELECT b from Blog b where b.owner.id=?1");
 		query.setParameter(1, accoundId);
 		return query.getResultList();
 	}
