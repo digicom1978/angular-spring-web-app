@@ -1,1 +1,4 @@
 
+[submodule "src/main/webapp/app"]
+	path = src/main/webapp/app
+	url = https://github.com/digicom1978/angular-spring-web-app
