@@ -1,0 +1,4 @@
+[submodule "angular-spring-web-app"]
+	path = angular-spring-web-app
+	url = https://github.com/digicom1978/angular-spring-web-app
+	branch = master
