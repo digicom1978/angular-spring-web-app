@@ -28,5 +28,17 @@ Tutorial #8
 Tutorial #9
 - A tutorial covering ui-router, creation of a custom view and controller, and data-binding using $scope.
 
+
 Tutorial #10
 - covering simple session management using localStorage, creation of services using the factory method, and also some basic Angular and ui-router directives.
+
+
+Tutorial #11
+- bower install angular-resource @ \basic-web-app\src\main\webapp\app>
+	If you are stuck with lines below,
+		  "type": "input",
+		  "message": "Answer",
+		  "name": "prompt",
+		  "level": "prompt"
+	, then remove '"json": "bower.json"' on .bowerrc file
+

@@ -39,10 +39,9 @@ angular.module( 'ngBoilerplate.home', [
 /**
  * And of course we define a controller for our route.
  */
-.controller( 'HomeCtrl', function HomeController( $scope, sessionService ) {
-	$scope.isLoggedIn = sessionService.isLoggedIn;
-	$scope.logout = sessionService.logout;
+.controller( 'HomeCtrl', function HomeController( $scope, sessionService) {
+    $scope.isLoggedIn = sessionService.isLoggedIn;
+    $scope.logout = sessionService.logout;
 })
 
 ;
-
