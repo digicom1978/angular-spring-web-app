@@ -23,6 +23,14 @@ Tutorial #7
 Tutorial #8
 - http://localhost:8080/basic-web-app/app/index.html
 - Node js, grunt-cli, bower, Angular JS
+		1. Install nodejs
+		2. Install grunt
+			npm install -g grunt-cli
+		3. Install bower
+			npm install -g bower
+		4. Create app folder under webapp
+			C:\workspace_jee_oxy\basic-web-app\src\main\webapp
+		5. Type "npm install" in app folder
 
 
 Tutorial #9

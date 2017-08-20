@@ -5,18 +5,21 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
+/**
+ * Created by Chris on 6/19/14.
+ */
 @Entity
 public class BlogEntry {
 
-	@Id
-	@GeneratedValue
+    @Id
+    @GeneratedValue
     private Long id;
 
     private String title;
-    
+
     private String content;
 
-	@ManyToOne
+    @ManyToOne
     private Blog blog;
 
     public String getTitle() {
@@ -44,10 +47,10 @@ public class BlogEntry {
     }
 
     public String getContent() {
-		return content;
-	}
+        return content;
+    }
 
-	public void setContent(String content) {
-		this.content = content;
-	}
+    public void setContent(String content) {
+        this.content = content;
+    }
 }

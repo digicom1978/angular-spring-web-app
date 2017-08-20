@@ -8,8 +8,5 @@
     "angular-bootstrap": "~0.10.0",
     "angular-ui-router": "~0.2"
   },
-  "dependencies": {},
-  "resolutions": {
-    "angular": "1.6.5"
-  }
+  "dependencies": {}
 }

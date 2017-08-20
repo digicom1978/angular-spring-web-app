@@ -1,12 +1,15 @@
 package tutorial.core.repositories;
 
+import tutorial.core.models.entities.BlogEntry;
+import tutorial.core.services.util.BlogEntryList;
+
 import java.util.List;
 
-import tutorial.core.models.entities.BlogEntry;
-
+/**
+ * Created by Chris on 7/10/14.
+ */
 public interface BlogEntryRepo {
-
-	public BlogEntry findBlogEntry(Long id); // Returns the BlogEntry or null if it can't be found
+    public BlogEntry findBlogEntry(Long id); // Returns the BlogEntry or null if it can't be found
     public BlogEntry deleteBlogEntry(Long id); // Deletes the found BlogEntry or returns null if it can't be found
 
     /**
@@ -19,5 +22,4 @@ public interface BlogEntryRepo {
     public BlogEntry createBlogEntry(BlogEntry data);
 
     public List<BlogEntry> findByBlogId(Long blogId);
-	
 }

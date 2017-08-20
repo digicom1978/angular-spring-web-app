@@ -10,124 +10,59 @@ import tutorial.core.services.BlogEntryService;
 import tutorial.rest.resources.BlogEntryResource;
 import tutorial.rest.resources.asm.BlogEntryResourceAsm;
 
-
-
-
+/**
+ * Created by Chris on 6/5/14.
+ */
 @Controller
 @RequestMapping("/rest/blog-entries")
 public class BlogEntryController {
-	private BlogEntryService service;
-	
-	@Autowired
-	public BlogEntryController(BlogEntryService service) {
-		this.service = service;
-	}
-	
-	@RequestMapping(value="/{blogEntryId}", 
-			method = RequestMethod.GET)
-	public ResponseEntity<BlogEntryResource> getBlogEntry(@PathVariable Long blogEntryId) {
-		BlogEntry entry = service.findBlogEntry(blogEntryId);
-		if( entry != null ) {
-			BlogEntryResource res = new BlogEntryResourceAsm().toResource(entry);	
-			return new ResponseEntity<BlogEntryResource>(res, HttpStatus.OK);
-		} else {
-			return new ResponseEntity<BlogEntryResource>(HttpStatus.NOT_FOUND);
-		}
-	}
-	
-	@RequestMapping(value="/{blogEntryId}", 
-			method = RequestMethod.DELETE)
-	public ResponseEntity<BlogEntryResource> deleteBlogEntry(@PathVariable Long blogEntryId) {
-		BlogEntry entry = service.deleteBlogEntry(blogEntryId);
-		if( entry != null ) {
-			BlogEntryResource res = new BlogEntryResourceAsm().toResource(entry);	
-			return new ResponseEntity<BlogEntryResource>(res, HttpStatus.OK);
-		} else {
-			return new ResponseEntity<BlogEntryResource>(HttpStatus.NOT_FOUND);
-		}
-	}
-	
-	@RequestMapping(value="/{blogEntryId}", 
-			method = RequestMethod.PUT)
-	public ResponseEntity<BlogEntryResource> updateBlogEntry(@PathVariable Long blogEntryId, 
-															@RequestBody BlogEntryResource sentBlogEntry) {
-		BlogEntry updateEntry = service.updateBlogEntry(blogEntryId, sentBlogEntry.toBlogEntry());
-		if( updateEntry != null ) {
-			BlogEntryResource res = new BlogEntryResourceAsm().toResource(updateEntry);	
-			return new ResponseEntity<BlogEntryResource>(res, HttpStatus.OK);
-		} else {
-			return new ResponseEntity<BlogEntryResource>(HttpStatus.NOT_FOUND);
-		}
-	}
-	
-	
-	// Origin from TestController
-/*	@RequestMapping("/test")
-	public String test() {
-		return "view";
-	}*/
+    private BlogEntryService service;
 
-	// Make use json mapping by returning Entity
-/*	@RequestMapping("/test")
-	public ResponseEntity<Object> test() {
-		BlogEntry entry = new BlogEntry();
-		entry.setTitle("Test Blog Entry");
-		return new ResponseEntity<Object>(entry, HttpStatus.OK);
-	}*/
+    @Autowired
+    public BlogEntryController(BlogEntryService service)
+    {
+        this.service = service;
+    }
 
+    @RequestMapping(value="/{blogEntryId}",
+            method = RequestMethod.GET)
+    public ResponseEntity<BlogEntryResource> getBlogEntry(
+            @PathVariable Long blogEntryId) {
+        BlogEntry entry = service.findBlogEntry(blogEntryId);
+        if(entry != null)
+        {
+            BlogEntryResource res = new BlogEntryResourceAsm().toResource(entry);
+            return new ResponseEntity<BlogEntryResource>(res, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<BlogEntryResource>(HttpStatus.NOT_FOUND);
+        }
+    }
 
-	// Make use json mapping by specifying response body
-/*	@RequestMapping("/test")
-	public @ResponseBody BlogEntry test() {
-		BlogEntry entry = new BlogEntry();
-		entry.setTitle("Test Blog Entry");
-		return entry;
-	}*/
-	
-	// Make use json mapping by specifying response body
-	// Plus specifying request body(that I want to receive)
-	@RequestMapping(value="/test", method = RequestMethod.POST)
-	public @ResponseBody BlogEntry test(@RequestBody BlogEntry entry) {
-		
-		return entry;
-	}
+    @RequestMapping(value="/{blogEntryId}",
+            method = RequestMethod.DELETE)
+    public ResponseEntity<BlogEntryResource> deleteBlogEntry(
+            @PathVariable Long blogEntryId) {
+        BlogEntry entry = service.deleteBlogEntry(blogEntryId);
+        if(entry != null)
+        {
+            BlogEntryResource res = new BlogEntryResourceAsm().toResource(entry);
+            return new ResponseEntity<BlogEntryResource>(res, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<BlogEntryResource>(HttpStatus.NOT_FOUND);
+        }
+    }
+
+    @RequestMapping(value="/{blogEntryId}",
+            method = RequestMethod.PUT)
+    public ResponseEntity<BlogEntryResource> updateBlogEntry(
+            @PathVariable Long blogEntryId, @RequestBody BlogEntryResource sentBlogEntry) {
+        BlogEntry updatedEntry = service.updateBlogEntry(blogEntryId, sentBlogEntry.toBlogEntry());
+        if(updatedEntry != null)
+        {
+            BlogEntryResource res = new BlogEntryResourceAsm().toResource(updatedEntry);
+            return new ResponseEntity<BlogEntryResource>(res, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<BlogEntryResource>(HttpStatus.NOT_FOUND);
+        }
+    }
 }
-
-/**
--- Request mapping at method level
-@Controller
-public class BlogEntryController {
-	...
-	
-	@RequestMapping(value="/rest/blog-entries/{blogEntryId}", 
-			method = RequestMethod.GET)
-	public ResponseEntity<BlogEntryResource> getBlogEntry(@PathVariable Long blogEntryId) {
-
-...
-BlogEntryResourceAsm
-@Override
-	public BlogEntryResource toResource(BlogEntry blogEntry) {
-		BlogEntryResource res = new BlogEntryResource();
-		res.setTitle(blogEntry.getTitle());
-		Link link = linkTo(methodOn(BlogEntryController.class).getBlogEntry(blogEntry.getId())).withSelfRel();
-
-
--- Request mapping at class level
-@Controller
-@RequestMapping(value="/rest/blog-entries")
-public class BlogEntryController {
-	...
-	
-	@RequestMapping(value="/{blogEntryId}", 
-			method = RequestMethod.GET)
-	public ResponseEntity<BlogEntryResource> getBlogEntry(@PathVariable Long blogEntryId) {
-
-...
-BlogEntryResourceAsm
-@Override
-	public BlogEntryResource toResource(BlogEntry blogEntry) {
-		BlogEntryResource res = new BlogEntryResource();
-		res.setTitle(blogEntry.getTitle());
-		Link link = linkTo(BlogEntryController.class).slash(blogEntry.getId()).withSelfRel();
-
- */
